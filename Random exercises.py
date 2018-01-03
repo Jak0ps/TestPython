@@ -107,3 +107,44 @@ def scrabble_score(word):
 
 
 print scrabble_score("jacob")
+
+#Exercise 8
+def censor(text,word):
+    tempword = ""
+    centext = ""
+    for i in text:
+        if not i.isspace():
+            tempword = tempword + i
+        elif tempword == word:
+            if not centext == "":
+                centext = centext + " "
+            for i in range(len(word)):
+                centext = centext + "*"
+                tempword = ""
+        else:
+            if centext == "":
+                centext = tempword
+                tempword = ""
+            else:
+                centext = centext + " " + tempword
+                tempword = ""
+    if tempword == word:
+        centext = centext + " "
+        for i in range(len(word)):
+            centext = centext + "*"
+    else:
+        centext = centext + " " + tempword
+    return centext
+
+#Correct code
+def censor(text, word):
+    words = text.split()
+    result = ''
+    stars = '*' * len(word)
+    count = 0
+    for i in words:
+        if i == word:
+            words[count] = stars
+        count += 1
+    result =' '.join(words)
+    return result
