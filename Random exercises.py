@@ -76,3 +76,34 @@ def reverse2(text):
         word = word + text[l]
         l -= 1
     return word
+
+#Exercise 6
+def anti_vowel(text):
+    vowels = ['a','e','i','o','u']
+    word = ""
+    for n in vowels:
+        for i in range(len(text)):
+            if not n == text[i] and not n.upper() == text[i]:
+                word = word + text[i]
+        text = word
+        word = ""
+    return text
+
+print anti_vowel("Hey You!")
+print anti_vowel("Yab Gab to Trab Yab Yab Aeiouz")
+
+#Exercise 7
+score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2,
+         "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3,
+         "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1,
+         "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4,
+         "x": 8, "z": 10}
+
+def scrabble_score(word):
+    total = 0
+    for i in word:
+        total = total + score[i.lower()]
+    return total
+
+
+print scrabble_score("jacob")
