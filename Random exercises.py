@@ -148,3 +148,15 @@ def censor(text, word):
         count += 1
     result =' '.join(words)
     return result
+
+
+#Exercise 9
+def count(sequence,item):
+    counter=0
+    for i in sequence:
+        if i == item:
+            counter += 1
+    return int(counter)
+
+#Exercise 10
+def purify():
