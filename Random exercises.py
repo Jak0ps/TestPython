@@ -159,4 +159,49 @@ def count(sequence,item):
     return int(counter)
 
 #Exercise 10
-def purify():
+def purify(numbers):
+    even = []
+    for i in numbers:
+        if i % 2 == 0:
+            even.append(i)
+    return even
+
+purify([1,2,3])
+
+#Exercise 11
+def product(numbers):
+    prod = 1
+    for i in numbers:
+        prod = prod * i
+    return int(prod)
+
+print product([4, 5, 5])
+
+#Exercise 12
+def remove_duplicates(inputlist):
+    if inputlist == []:
+        return []
+    inputlist = sorted(inputlist)
+    outputlist = [inputlist[0]]
+    for i in inputlist:
+        if i > outputlist[-1]:
+            outputlist.append(i)
+    return outputlist
+
+print remove_duplicates([1, 1, 2, 2])
+
+#Exercise 13
+def median(numbers):
+    if numbers == []:
+        return []
+    numbers = sorted(numbers)
+    #you can use this as well
+    #numbers.sort()
+    if len(numbers) % 2 == 1:
+        return numbers[int(len(numbers)/2)]
+    else:
+        return ((numbers[int(len(numbers)/2)-1] + \
+                 numbers[int(len(numbers)/2)]) / (2.0))
+
+print median([7, 12, 3, 1, 6])
+print median([7, 3, 1, 4])
