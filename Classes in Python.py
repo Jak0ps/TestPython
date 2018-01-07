@@ -216,12 +216,11 @@ emp.greet(ceo)
 ceo.greet(emp)
 # Get back to work, Steve!
 
-#Example
+#Example of super call
 class Employee(object):
     """Models real-life employees!"""
     def __init__(self, employee_name):
         self.employee_name = employee_name
-
     def calculate_wage(self, hours):
         self.hours = hours
         return hours * 20.00
@@ -235,5 +234,55 @@ class PartTimeEmployee(Employee):
 
 milton = PartTimeEmployee("Jacob")
 print milton.full_time_wage(10)
+print milton.calculate_wage(10)
 
 
+#Class Basics
+class Triangle(object):
+    number_of_sides = 3
+    def __init__(self, angle1, angle2, angle3):
+        Triangle.angle1 = angle1
+        Triangle.angle2 = angle2
+        Triangle.angle3 = angle3
+    def check_angles(self):
+        if self.angle1 + self.angle2 + self.angle3 == 180:
+            return True
+        else:
+            return False
+
+#CodeAcademy code
+class Triangle2(object):
+    number_of_sides = 3
+    def __init__(self, angle1, angle2, angle3):
+        self.angle1 = angle1
+        self.angle2 = angle2
+        self.angle3 = angle3
+    def check_angles(self):
+        if (self.angle1 + self.angle2 + self.angle3) == 180:
+            return True
+        else:
+            return False
+
+class Equilateral(Triangle):
+    angle = 60
+    def __init__(self):
+        self.angle1 = self.angle
+        self.angle2 = self.angle
+        self.angle3 = self.angle
+
+tri = Triangle(90,90,90)
+tri2 = Triangle2(90,90,90)
+print tri.check_angles()
+False
+print tri2.check_angles()
+False
+tri = Triangle(60,60,60)
+tri2 = Triangle2(60,60,60)
+print tri.check_angles()
+True
+print tri2.check_angles()
+True
+
+tri3 = Triangle(90,30,60)
+print tri3.number_of_sides
+print tri3.check_angles()
