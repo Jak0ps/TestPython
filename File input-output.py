@@ -41,3 +41,31 @@ print(my_file.readline())
 my_file.close()
 
 #PSA: Buffering Data
+
+# Use a file handler to open a file for writing
+write_file = open("text.txt", "w")
+# Open the file for reading
+read_file = open("text.txt", "r")
+# Write to the file
+write_file.write("Not closing files is VERY BAD.")
+write_file.close()
+# Try to read from the file
+print(read_file.read())
+read_file.close()
+print(read_file.read())
+#Traceback (most recent call last):
+#File "python",in <module>
+#ValueError: I/O operation on closed file
+
+
+#The 'with' and 'as' Keywords
+with open("text.txt", "w") as textfile:
+  textfile.write("Success!")
+
+#Case Closed?
+with open("text.txt","w") as my_file:
+  my_file.write("Whatever")
+
+if my_file.closed:
+  my_file.close()
+print(my_file.closed)
