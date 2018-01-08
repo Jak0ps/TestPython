@@ -21,3 +21,23 @@ for i in my_list:
     my_file.write(str(i)+"\n")
 my_file.close()
 
+#Print output.txt content
+my_file = open("output.txt","r")
+
+print(my_file.read())
+my_file.close()
+
+
+#Reading Between the Lines
+""" Content of text.txt
+I'm the first line of the file!
+I'm the second line.
+Third line here, boss.
+"""
+my_file = open("text.txt","r")
+print(my_file.readline())
+print(my_file.readline())
+print(my_file.readline())
+my_file.close()
+
+#PSA: Buffering Data
