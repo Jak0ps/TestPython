@@ -69,3 +69,7 @@ with open("text.txt","w") as my_file:
 if my_file.closed:
   my_file.close()
 print(my_file.closed)
+
+#Open files in windows
+with open("C:\\tmp\\app.yaml", 'r') as f:
+    f.read()
